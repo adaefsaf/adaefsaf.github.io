@@ -3,70 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Biodata</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #1e1e1e;
-            color: #cfcfcf;
-            margin: 0;
-            padding: 0;
-        }
-        .container {
-            max-width: 600px;
-            margin: 50px auto;
-            background-color: #2a2a2a;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-            border-radius: 8px;
-            overflow: hidden;
-        }
-        .header {
-            background-color: #0078d7;
-            color: #fff;
-            padding: 20px;
-            text-align: center;
-        }
-        .header h1 {
-            margin: 0;
-            font-size: 2.5em;
-        }
-        .content {
-            padding: 20px;
-        }
-        .section {
-            margin-bottom: 20px;
-        }
-        .section h2 {
-            margin-top: 0;
-            color: #0078d7;
-        }
-        .glow {
-            color: #0078d7;
-            text-shadow: 0 0 8px rgba(0, 120, 215, 0.8);
-        }
-    </style>
+    <title>Contact - Ada Efsaf</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
-        <div class="header">
-            <h1 class="glow">My Biodata</h1>
+        <div class="navbar">
+            <div class="navbar-links">
+                <a href="/">Home</a>
+                <a href="/contact" class="active">Contact</a>
+            </div>
+            <div class="navbar-icons">
+                <a href="https://github.com/adaefsaf" target="_blank">GitHub</a>
+                <a href="https://twitter.com/adaefsaf" target="_blank">Twitter</a>
+                <a href="https://linkedin.com/in/adaefsaf" target="_blank">LinkedIn</a>
+                <a href="mailto:ada.efsaf@example.com">Email</a>
+            </div>
         </div>
         <div class="content">
-            <div class="section">
-                <h2>Personal Information</h2>
-                <p><strong>Full Name:</strong> Ada Efsaf</p>
-                <p><strong>Age:</strong> 25</p>
-                <p><strong>Email:</strong> ada.efsaf@example.com</p>
-            </div>
-            <div class="section">
-                <h2>Interests</h2>
-                <p>Gaming, Reading, Traveling, Music, Coding</p>
-            </div>
-            <div class="section">
-                <h2>About Me</h2>
-                <p>Hi! I'm Ada, a passionate gamer and tech enthusiast. I love exploring new games, learning new technologies, and sharing my experiences with friends. Welcome to my biodata page!</p>
+            <h1>Let's chat 💬</h1>
+            <p>Have an inquiry, or want to connect? Feel free to leave a message below, or get in touch via Discord, Twitter, or email.</p>
+            <p>It's currently <span id="current-time">00:00:00 p.m.</span> for me, so I'm probably awake. I'll get back to you soon.</p>
+            <div class="contact-form">
+                <div class="contact-form-fields">
+                    <label for="email">EMAIL</label>
+                    <input type="text" id="email" placeholder="example@gmail.com">
+                    <label for="message">MESSAGE</label>
+                    <textarea id="message" placeholder="Your message here..."></textarea>
+                </div>
+                <button class="send-btn">Send</button>
             </div>
         </div>
+        <div class="footer">
+            <h1>Ada Efsaf</h1>
+            <h2>System Administrator</h2>
+        </div>
     </div>
+    <script>
+        document.getElementById('current-time').innerText = new Date().toLocaleTimeString();
+    </script>
 </body>
 </html>
