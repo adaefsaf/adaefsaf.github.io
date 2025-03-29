@@ -1,24 +1,85 @@
+/* Font Settings */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Roboto', sans-serif;
     background-color: #141414;
     color: #fff;
     margin: 0;
+    padding: 20px; /* Tambahkan padding pada body */
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
+    position: relative;
+    overflow: auto;
 }
 
+/* Container Styling */
 .container {
-    background-color: #1f1f1f;
+    background-color: rgba(31, 31, 31, 0.8);
     padding: 20px;
     border-radius: 15px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-    max-width: 800px;
-    width: 100%;
+    max-width: 600px; /* Kurangi ukuran max-width */
+    width: 90%;
     text-align: center;
+    margin: 20px; /* Jarak antara container dan dinding */
+    position: relative;
+    z-index: 1;
 }
 
+.glow-animation::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(0, 120, 215, 0.3), 0 0 20px rgba(0, 120, 215, 0.2), 0 0 30px rgba(0, 120, 215, 0.1);
+    opacity: 1;
+    animation: glow 1.5s infinite alternate;
+    pointer-events: none;
+}
+
+@keyframes glow {
+    from {
+        box-shadow: 0 0 10px rgba(0, 120, 215, 0.3), 0 0 20px rgba(0, 120, 215, 0.2), 0 0 30px rgba(0, 120, 215, 0.1);
+    }
+    to {
+        box-shadow: 0 0 20px rgba(0, 120, 215, 0.5), 0 0 40px rgba(0, 120, 215, 0.4), 0 0 60px rgba(0, 120, 215, 0.3);
+    }
+}
+
+/* Glow Box Styling */
+.glow-box {
+    position: relative;
+    border-radius: 8px;
+}
+
+.glow-box::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 8px;
+    box-shadow: 0 0 5px rgba(0, 120, 215, 0.3), 0 0 10px rgba(0, 120, 215, 0.2), 0 0 15px rgba(0, 120, 215, 0.1);
+    opacity: 1;
+    animation: glow-box 1.5s infinite alternate;
+    pointer-events: none;
+}
+
+@keyframes glow-box {
+    from {
+        box-shadow: 0 0 5px rgba(0, 120, 215, 0.3), 0 0 10px rgba(0, 120, 215, 0.2), 0 0 15px rgba(0, 120, 215, 0.1);
+    }
+    to {
+        box-shadow: 0 0 10px rgba(0, 120, 215, 0.5), 0 0 20px rgba(0, 120, 215, 0.4), 0 0 30px rgba(0, 120, 215, 0.3);
+    }
+}
+
+/* Heading and Text Styling */
 .content h1 {
     font-size: 2.5em;
     color: #0078d7;
@@ -28,8 +89,10 @@ body {
 .content p {
     color: #ccc;
     margin-bottom: 20px;
+    line-height: 1.5;
 }
 
+/* Biodata Section Styling */
 .biodata {
     text-align: left;
 }
@@ -39,6 +102,11 @@ body {
     padding: 20px;
     border-radius: 8px;
     margin-bottom: 20px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.biodata-section:hover {
+    transform: scale(1.05);
 }
 
 .biodata-section h2 {
@@ -48,8 +116,27 @@ body {
 
 .biodata-section p {
     color: #ccc;
+    margin: 5px 0;
 }
 
+.biodata-section a {
+    color: #0078d7;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+.biodata-section a img {
+    width: 20px;
+    height: 20px;
+    margin-right: 8px;
+}
+
+.biodata-section a:hover {
+    text-decoration: underline;
+}
+
+/* Footer Styling */
 .footer {
     border-top: 2px solid rgba(47, 51, 54, 0.5);
     margin-top: 20px;
@@ -64,14 +151,6 @@ body {
 .footer h2 {
     color: rgba(255, 255, 255, 0.3);
     font-size: 1.2em;
-}
-
-.glow-on-hover {
-    transition: text-shadow 0.3s ease-in-out;
-}
-
-.glow-on-hover:hover {
-    text-shadow: 0 0 8px #0078d7;
 }
 
 /* Responsive Design */
