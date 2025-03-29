@@ -1,28 +1,61 @@
 /* Font Settings */
+/* Gradient Background Animation */
 body {
     font-family: 'Roboto', sans-serif;
-    background-color: #141414;
+    background: linear-gradient(120deg, #0078d7, #00d7a7, #d70078, #ff8c00, #ff0080);
+    background-size: 400% 400%; /* Perbesar ukuran background untuk animasi */
+    animation: gradientMove 10s infinite alternate; /* Animasi bergerak lebih halus */
     color: #fff;
     margin: 0;
-    padding: 20px; /* Tambahkan padding pada body */
+    padding: 0;
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
     position: relative;
     overflow: auto;
+    padding-top: 60px; /* Tambahkan padding pada body agar konten tidak tertutup navbar */
+}
+
+/* Gaya khusus untuk halaman /projects */
+body.projects {
+    background: linear-gradient(120deg, #ff8c00, #ff0080, #0078d7);
+    animation: gradientMove 12s infinite alternate; /* Animasi lebih lambat untuk halaman projects */
+}
+
+body.projects .container {
+    background-color: rgba(47, 47, 47, 0.8); /* Transparansi lebih gelap untuk halaman projects */
+}
+
+/* Gradient Animation Keyframes */
+@keyframes gradientMove {
+    0% {
+        background-position: 0% 50%;
+    }
+    25% {
+        background-position: 50% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    75% {
+        background-position: 50% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
 }
 
 /* Container Styling */
 .container {
-    background-color: rgba(31, 31, 31, 0.8);
+    background-color: rgba(31, 31, 31, 0.7); /* Transparansi dengan warna hitam */
     padding: 20px;
     border-radius: 15px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-    max-width: 600px; /* Kurangi ukuran max-width */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); /* Tambahkan bayangan untuk efek elegan */
+    max-width: 600px;
     width: 90%;
     text-align: center;
-    margin: 20px; /* Jarak antara container dan dinding */
+    margin: 20px auto; /* Pusatkan secara horizontal */
     position: relative;
     z-index: 1;
 }
@@ -169,5 +202,71 @@ body {
 
     .footer h2 {
         font-size: 1em;
+    }
+}
+
+/* Navbar Styling */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(31, 31, 31, 0.9);
+    padding: 10px 0; /* Kurangi padding agar lebih rapi */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+}
+
+.navbar-container {
+    display: flex;
+    justify-content: center; /* Pusatkan konten navbar */
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px; /* Tambahkan jarak antar menu */
+    margin: 0;
+    padding: 0;
+    justify-content: center; /* Pusatkan menu */
+}
+
+.nav-links li {
+    display: inline;
+}
+
+.nav-links a {
+    color: #ccc;
+    text-decoration: none;
+    font-size: 1em;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #0078d7;
+    transform: scale(1.1);
+}
+
+.nav-links .active {
+    color: #0078d7;
+    font-weight: bold;
+}
+
+/* Responsif untuk perangkat seluler */
+@media (max-width: 768px) {
+    .nav-links {
+        flex-wrap: wrap; /* Agar menu tetap rapi di layar kecil */
+        gap: 10px;
+    }
+
+    .navbar {
+        padding: 10px; /* Kurangi padding untuk layar kecil */
+    }
+
+    .nav-links a {
+        font-size: 1.2em; /* Perbesar teks untuk layar kecil */
     }
 }
