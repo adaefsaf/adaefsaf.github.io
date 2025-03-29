@@ -3,35 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact - Ada Efsaf</title>
+    <title>Biodata - Ada Efsaf</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
-        <div class="navbar">
-            <div class="navbar-links">
-                <a href="/">Home</a>
-                <a href="/contact" class="active">Contact</a>
-            </div>
-            <div class="navbar-icons">
-                <a href="https://github.com/adaefsaf" target="_blank">GitHub</a>
-                <a href="https://twitter.com/adaefsaf" target="_blank">Twitter</a>
-                <a href="https://linkedin.com/in/adaefsaf" target="_blank">LinkedIn</a>
-                <a href="mailto:ada.efsaf@example.com">Email</a>
-            </div>
-        </div>
         <div class="content">
-            <h1>Let's chat 💬</h1>
-            <p>Have an inquiry, or want to connect? Feel free to leave a message below, or get in touch via Discord, Twitter, or email.</p>
-            <p>It's currently <span id="current-time">00:00:00 p.m.</span> for me, so I'm probably awake. I'll get back to you soon.</p>
-            <div class="contact-form">
-                <div class="contact-form-fields">
-                    <label for="email">EMAIL</label>
-                    <input type="text" id="email" placeholder="example@gmail.com">
-                    <label for="message">MESSAGE</label>
-                    <textarea id="message" placeholder="Your message here..."></textarea>
+            <h1 class="glow-on-hover">Biodata</h1>
+            <p>Welcome to my biodata page. Here you can find information about me.</p>
+            <div class="biodata">
+                <div class="biodata-section">
+                    <h2>Personal Information</h2>
+                    <p><strong>Full Name:</strong> Ada Efsaf</p>
+                    <p><strong>Age:</strong> 25</p>
+                    <p><strong>Email:</strong> ada.efsaf@example.com</p>
                 </div>
-                <button class="send-btn">Send</button>
+                <div class="biodata-section">
+                    <h2>Interests</h2>
+                    <p>Gaming, Reading, Traveling, Music, Coding</p>
+                </div>
+                <div class="biodata-section">
+                    <h2>About Me</h2>
+                    <p>Hi! I'm Ada, a passionate gamer and tech enthusiast. I love exploring new games, learning new technologies, and sharing my experiences with friends. Welcome to my biodata page!</p>
+                </div>
             </div>
         </div>
         <div class="footer">
@@ -39,8 +33,5 @@
             <h2>System Administrator</h2>
         </div>
     </div>
-    <script>
-        document.getElementById('current-time').innerText = new Date().toLocaleTimeString();
-    </script>
 </body>
 </html>
