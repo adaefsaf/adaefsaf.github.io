@@ -125,51 +125,32 @@ body.projects .container {
     line-height: 1.5;
 }
 
-/* Biodata Section Styling */
-.biodata {
+/* Projects Section Styling */
+.projects-list {
     text-align: left;
 }
 
-.biodata-section {
+.project-item {
     background-color: rgba(47, 51, 54, 0.5);
     padding: 20px;
     border-radius: 8px;
     margin-bottom: 20px;
-    transition: transform 0.3s ease-in-out;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
-.biodata-section:hover {
+.project-item:hover {
     transform: scale(1.05);
+    box-shadow: 0 0 10px rgba(0, 120, 215, 0.5), 0 0 20px rgba(0, 120, 215, 0.4), 0 0 30px rgba(0, 120, 215, 0.3);
 }
 
-.biodata-section h2 {
+.project-item h2 {
     margin-top: 0;
     color: #0078d7;
 }
 
-.biodata-section p {
+.project-item p {
     color: #ccc;
     margin: 5px 0;
-}
-
-.biodata-section a {
-    color: #0078d7;
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-}
-.biodata-section a:hover {
-    color: #0056a1;
-}
-
-.biodata-section a img {
-    width: 20px;
-    height: 20px;
-    margin-right: 8px;
-}
-
-.biodata-section a:hover {
-    text-decoration: underline;
 }
 
 /* Footer Styling */
@@ -195,7 +176,7 @@ body.projects .container {
         font-size: 2em;
     }
 
-    .biodata-section {
+    .project-item {
         padding: 15px;
     }
 
@@ -279,6 +260,13 @@ body.projects .container {
     }
 }
 
-.icon-white {
-    filter: brightness(0) invert(1);
+.project-item a {
+    color: #0078d7;
+    text-decoration: none;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+.project-item a:hover {
+    color: #005bb5;
+    transform: scale(1.05);
+    text-decoration: underline;
 }
