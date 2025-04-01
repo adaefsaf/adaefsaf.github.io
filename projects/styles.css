@@ -1,0 +1,272 @@
+/* Font Settings */
+/* Gradient Background Animation */
+body {
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(120deg, #0078d7, #00d7a7, #d70078, #ff8c00, #ff0080);
+    background-size: 400% 400%; /* Perbesar ukuran background untuk animasi */
+    animation: gradientMove 10s infinite alternate; /* Animasi bergerak lebih halus */
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    position: relative;
+    overflow: auto;
+    padding-top: 60px; /* Tambahkan padding pada body agar konten tidak tertutup navbar */
+}
+
+/* Gaya khusus untuk halaman /projects */
+body.projects {
+    background: linear-gradient(120deg, #ff8c00, #ff0080, #0078d7);
+    animation: gradientMove 12s infinite alternate; /* Animasi lebih lambat untuk halaman projects */
+}
+
+body.projects .container {
+    background-color: rgba(47, 47, 47, 0.8); /* Transparansi lebih gelap untuk halaman projects */
+}
+
+/* Gradient Animation Keyframes */
+@keyframes gradientMove {
+    0% {
+        background-position: 0% 50%;
+    }
+    25% {
+        background-position: 50% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    75% {
+        background-position: 50% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Container Styling */
+.container {
+    background-color: rgba(31, 31, 31, 0.7); /* Transparansi dengan warna hitam */
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); /* Tambahkan bayangan untuk efek elegan */
+    max-width: 600px;
+    width: 90%;
+    text-align: center;
+    margin: 20px auto; /* Pusatkan secara horizontal */
+    position: relative;
+    z-index: 1;
+}
+
+.glow-animation::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(0, 120, 215, 0.3), 0 0 20px rgba(0, 120, 215, 0.2), 0 0 30px rgba(0, 120, 215, 0.1);
+    opacity: 1;
+    animation: glow 1.5s infinite alternate;
+    pointer-events: none;
+}
+
+@keyframes glow {
+    from {
+        box-shadow: 0 0 10px rgba(0, 120, 215, 0.3), 0 0 20px rgba(0, 120, 215, 0.2), 0 0 30px rgba(0, 120, 215, 0.1);
+    }
+    to {
+        box-shadow: 0 0 20px rgba(0, 120, 215, 0.5), 0 0 40px rgba(0, 120, 215, 0.4), 0 0 60px rgba(0, 120, 215, 0.3);
+    }
+}
+
+/* Glow Box Styling */
+.glow-box {
+    position: relative;
+    border-radius: 8px;
+}
+
+.glow-box::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 8px;
+    box-shadow: 0 0 5px rgba(0, 120, 215, 0.3), 0 0 10px rgba(0, 120, 215, 0.2), 0 0 15px rgba(0, 120, 215, 0.1);
+    opacity: 1;
+    animation: glow-box 1.5s infinite alternate;
+    pointer-events: none;
+}
+
+@keyframes glow-box {
+    from {
+        box-shadow: 0 0 5px rgba(0, 120, 215, 0.3), 0 0 10px rgba(0, 120, 215, 0.2), 0 0 15px rgba(0, 120, 215, 0.1);
+    }
+    to {
+        box-shadow: 0 0 10px rgba(0, 120, 215, 0.5), 0 0 20px rgba(0, 120, 215, 0.4), 0 0 30px rgba(0, 120, 215, 0.3);
+    }
+}
+
+/* Heading and Text Styling */
+.content h1 {
+    font-size: 2.5em;
+    color: #0078d7;
+    margin-bottom: 20px;
+}
+
+.content p {
+    color: #ccc;
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+
+/* Projects Section Styling */
+.projects-list {
+    text-align: left;
+}
+
+.project-item {
+    background-color: rgba(47, 51, 54, 0.5);
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.project-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 10px rgba(0, 120, 215, 0.5), 0 0 20px rgba(0, 120, 215, 0.4), 0 0 30px rgba(0, 120, 215, 0.3);
+}
+
+.project-item h2 {
+    margin-top: 0;
+    color: #0078d7;
+}
+
+.project-item p {
+    color: #ccc;
+    margin: 5px 0;
+}
+
+/* Footer Styling */
+.footer {
+    border-top: 2px solid rgba(47, 51, 54, 0.5);
+    margin-top: 20px;
+    padding-top: 20px;
+}
+
+.footer h1 {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 2em;
+}
+
+.footer h2 {
+    color: rgba(255, 255, 255, 0.3);
+    font-size: 1.2em;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .content h1 {
+        font-size: 2em;
+    }
+
+    .project-item {
+        padding: 15px;
+    }
+
+    .footer h1 {
+        font-size: 1.5em;
+    }
+
+    .footer h2 {
+        font-size: 1em;
+    }
+}
+
+/* Navbar Styling */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(31, 31, 31, 0.9);
+    padding: 10px 0; /* Kurangi padding agar lebih rapi */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    transition: top 0.3s ease-in-out; /* Animasi untuk menyembunyikan navbar */
+}
+
+.navbar.hidden {
+    top: -100px; /* Sembunyikan navbar di luar layar */
+}
+
+.navbar-container {
+    display: flex;
+    justify-content: center; /* Pusatkan konten navbar */
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px; /* Tambahkan jarak antar menu */
+    margin: 0;
+    padding: 0;
+    justify-content: center; /* Pusatkan menu */
+}
+
+.nav-links li {
+    display: inline;
+}
+
+.nav-links a {
+    color: #ccc;
+    text-decoration: none;
+    font-size: 1em;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #0078d7;
+    transform: scale(1.1);
+}
+
+.nav-links .active {
+    color: #0078d7;
+    font-weight: bold;
+}
+
+/* Responsif untuk perangkat seluler */
+@media (max-width: 768px) {
+    .nav-links {
+        flex-wrap: wrap; /* Agar menu tetap rapi di layar kecil */
+        gap: 10px;
+    }
+
+    .navbar {
+        padding: 10px; /* Kurangi padding untuk layar kecil */
+    }
+
+    .nav-links a {
+        font-size: 1.2em; /* Perbesar teks untuk layar kecil */
+    }
+}
+
+.project-item a {
+    color: #0078d7;
+    text-decoration: none;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+.project-item a:hover {
+    color: #005bb5;
+    transform: scale(1.05);
+    text-decoration: underline;
+}
